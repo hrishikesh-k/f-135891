@@ -1,2 +1,9 @@
-# Local Netlify folder
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+node_modules
+.DS_Store
 .netlify
+.idea
+Brewfile.lock.json
