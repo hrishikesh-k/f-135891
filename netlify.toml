@@ -1,13 +1,13 @@
 [build]
-    publish = "public"
-    command = "echo No build command"
-    node_bundler = "esbuild"
+  command = "jekyll build"
+  publish = "_site"
+  functions = "netlify/functions"
 
 [dev]
-    publish = "public"
-    node_bundler = "esbuild"
+  command = "jekyll serve"
+  autoLaunch = false
+  targetPort = 4000
+  port = 8888
 
-[[redirects]]
-    from = "/api/*"
-    to = "/.netlify/functions/:splat"
-    status = 200
+[functions]
+  external_node_modules = ["airtable"]

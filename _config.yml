@@ -1,0 +1,133 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Tech Interview Coaching
+email: hello@techinterview.coach
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://techinterview.coach" # the base hostname & protocol for your site, e.g. http://example.com
+calendlyUrl: "https://calendly.com/techinterview-coach/15-minute-intro"
+
+include:
+  - ".well-known"
+  - "/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+  - "/node_modules/bootstrap/dist/css/bootstrap.min.css"
+  - "/node_modules/bootstrap/dist/css/bootstrap.min.css.map"
+  - "/node_modules/jquery/dist/jquery.min.js"
+  - "/node_modules/jquery-ui/dist/jquery-ui.min.js"
+  - "/node_modules/jquery.appear/jquery.appear.js"
+  - "/node_modules/imagesloaded/imagesloaded.pkgd.min.js"
+  - "/node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css"
+  - "/node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
+  - "/node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
+  - "/node_modules/@fortawesome/fontawesome-free/css/brands.min.css"
+  - "/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
+  - "/node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
+  - "/node_modules/@fortawesome/fontawesome-free/css/solid.min.css"
+  - "/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
+  - "/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
+exclude:
+  - ".netlify"
+  - ".envrc"
+  - "Brewfile"
+  - "Brewfile.lock.json"
+  - "babel.config.js"
+  - "jest.config.js"
+  - "commitlint.config.js"
+  - "eslint.config.mjs"
+  - "netlify.toml"
+  - "spec"
+  - "netlify"
+  - "images/photoshop-source-files"
+  - "**/*.psd"
+  - "package-lock.json"
+  - "package.json"
+  - "purgecss.config.js"
+  - "Rakefile"
+  - "README.md"
+  - "freeCourse.md"
+  - ".neo"
+
+collections:
+  thank-you:
+    output: true
+  coaches:
+    output: true
+  services:
+    output: true
+
+# Build settings
+environment: production
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-dotenv
+
+liquid:
+  # Output an error message and stop the build if
+  # the Liquid’s parser encounters an issue.
+  error_mode: warn
+  # strict_variables is used to assert variable existence.
+  # If set to false, undefined variables will be rendered as empty string.
+  # Otherwise, undefined variables will cause a render exception.
+  # Defaults to false.
+  strict_variables: true
+  # strict_filters is used to assert filter existence.
+  # If set to false, undefined filters will be skipped.
+  # Otherwise, undefined filters will cause a parse exception.
+  # Defaults to false.
+  strict_filters: true
+  # Cause a build to fail if there is a YAML syntax error in a
+  # page's front matter.
+  strict_front_matter: true
+
+feed:
+  lang: en
+  description: >-
+    We help you ace your tech interviews. We provide mock interviews, resume reviews, and career coaching.
+  author:
+    name: Tech Interview Coaching
+    email: hello@techinterview.coach
+    uri: https://techinterview.coach
+  posts_limit: 20
+  excerpt_only: false
+
+defaults:
+  # Exclude thank-you/** from sitemap
+  - scope:
+      path: "thank-you/**"
+    values:
+      sitemap: false
+
+  - scope:
+      path: ""
+    values:
+      announcement_id: cto-webinar
+      sitemap:
+      last_modified_at:
+      faq_id: faqs
+      footer:
+        image: /call-to-action.webp
+        desc: We always stay with our clients and respect their business.
+        color: "#009dff"
+        color-onhover: "#0064a4"
+        book-now: Book Now
+        email: hello[at]techinterview[dot]coach
+        phone-number: "+447575171999"
+        address: "251 Southwark Bridge Road, SE1 6FN, London, UK"
