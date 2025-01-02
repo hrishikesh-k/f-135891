@@ -1,5 +1,3 @@
-require("airtable");
-
 import AirtableClient from "./utils/airtable-client.mjs";
 
 import { testZap } from "./zaps/testZap.mjs";
