@@ -1,4 +1,4 @@
-var Airtable = require("airtable");
+import Airtable from "airtable"
 
 class AirtableClient {
   constructor(apiKey, baseKey) {
